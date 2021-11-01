@@ -2,7 +2,7 @@
 Analyze Github READMEs to try to guess programming language using Natural Language Processing techniques.
 
 # Team Members
-- Jason Tellez
+- Jason Tellez (here)
 - Jeff Akins
 - Veronica Reyes
 - Jacob Paxton
