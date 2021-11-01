@@ -13,7 +13,7 @@ import os
 import json
 from typing import Dict, List, Optional, Union, cast
 import requests
-
+import pandas as pd
 from env import github_token, github_username
 
 # TODO: Make a github personal access token.
@@ -23,11 +23,10 @@ from env import github_token, github_username
 # TODO: Add your github username to your env.py file under the variable `github_username`
 # TODO: Add more repositories to the `REPOS` list below.
 
-REPOS = [
-    "microsoft/vcpkg",
-    "microsoft/LightGBM",
-    "microsoft/nni",
-]
+repos = pd.read_csv('microsoft_repo_list.csv', index_col=0)
+repos = repos.rename(columns={'0': 'repo_names'})
+
+REPOS = list(repos.repo_names)
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
 
