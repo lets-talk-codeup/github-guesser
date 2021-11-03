@@ -1,13 +1,14 @@
 # NLP - Guessing Github
-Analyze Github READMEs to try to guess programming language using Natural Language Processing techniques.
 
-# Team Members
+For this project, we will be scraping data from GitHub repository README files. The goal will be to build a model that can predict what programming language a repository is, given the text of the README file.
+
+## Team Members
 - Jason Tellez
 - Jeff Akins
 - Veronica Reyes
 - Jacob Paxton
 
-# Data Links
+## Data Links
 - 1,500 Original READMEs from Microsoft's GitHub org, scraped on 10/28/2021 (JSON): 
     * https://drive.google.com/file/d/1tu9A0pWc-At6tvAGwQp4Ww8WwqDHbjxD/view
 - Cleaned, tokenized, lemmatized, stopwords-removed READMEs file (JSON):
@@ -35,14 +36,14 @@ The goal of this project was to build a model that can predict the primary progr
 
 #### Deliverables
 1. A final notebook. This notebook will be used as a walkthough to present results and allow users to recreate the findings.
-2. Slides presenting our project and findings
+2. Slides presenting our project's findings through informative visualiztions and graphics
 3. A video created by our team talking through our slides
 
 **Additional Deliverables**
 
 4. Python modules that automate the data pipeline process. These modules will be imported and used in the final notebook.
 5. This README that describes what the project is and pipeline process as well as steps on how to recreate our results.
-6. A Trello board that details the process of creating this project.
+6. A [Trello board](https://trello.com/b/j2IoVnUG/nlp-project) that details the process of creating this project.
 
 ---
 
@@ -50,6 +51,13 @@ The goal of this project was to build a model that can predict the primary progr
 [(Back to top)](#table-of-contents)
 
 After acquiring and exploring the READMEs collected, we determined that the most common coding language in Microsoft's repos was TypeScript. Therefore, we decided to use classification modeling to attempt to predict whether the repos used TypeScript or not based on features from the READMEs. We were able to predict with an 84% accuracy whether a repo used TypeScript or not based on types of words and word length of a README.
+
+### Hypotheses
+#### 1.) Is the message length independent of the programming language?
+    - The mean message length for TypeScript is not the same as the mean for all other programming languages.
+    
+#### 2.) Does the word 'data' occur statistically more often in TypeScript documents than in other languages?
+    - The word 'data' does occur more often in non-TypeScript documents than in TypeScript.
 
 ---
 
@@ -76,9 +84,10 @@ is_TypeScript         |bool                |Boolean value of the repo's language
 - Create a README that will hold project information
 - Create a [Trello board](https://trello.com/b/j2IoVnUG/nlp-project) that defines project goals
 - Prepare a slideshow that will hold presentaion of results
+- As a team, delegated responsiblities to different team members
 
 ### Wrangle (Acquire/Prepare)
-- Created a function that scrapes repos from [Microsft's github page](https://github.com/microsoft) and input list of repo's through acquire.py to create .json file
+- Created a function that scrapes repos from [Microsoft's github page](https://github.com/microsoft) and input list of repo's through acquire.py to create .json file
 - Read .json file as dataframe with columns:
     - `repo`
     - `language`
@@ -102,21 +111,18 @@ README
     - run          
     - 9            
     - azure 
-
 - The most common words in READMEs for TypeScript repos are:
     - 9            
     - project      
     - run          
     - microsoft    
     - extension  
-    
 - The most common words in READMEs for Non-TypeScript repos are:
     - project      
     - microsoft    
     - azure        
     - run          
-    - data  
-    
+    - data      
 - README lengths do seem to vary by programming language.
    - MATLAB repos are the largest READMEs and Dafny repos are the smallest.
 - IDFs range from 1.19 for the word 'microsoft' to 7.08 for several words
@@ -145,11 +151,7 @@ Results:
 
 After acquiring and exploring the READMEs collected, we determined that the most common coding language in Microsoft's repos was TypeScript. Therefore, we decided to use classification modeling to attempt to predict whether the repos used TypeScript or not based on features from the READMEs. We were able to predict with an 84% accuracy whether a repo used TypeScript or not based on types of words and word length of a README.
 
-### Next Steps
-
-Given more time, we would like to:
-
-- 
+---
 
 ## Recreate These Results
 [(Back to top)](#table-of-contents)
