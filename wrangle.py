@@ -12,7 +12,7 @@ import time
 import re
 from sklearn.model_selection import train_test_split
 
-from env import github_token, github_username
+#from env import github_token, github_username
 
 import nltk
 from nltk.tokenize.toktok import ToktokTokenizer
@@ -174,7 +174,7 @@ def wrangle():
     return df
 
 
-def train_test_split(df, random_state=123)
+def train_val_test_split(df, random_state=123):
     """
     Function takes in a dataframe and returns:
         - train df = 64% of original df
