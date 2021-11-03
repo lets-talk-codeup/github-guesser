@@ -1,3 +1,5 @@
+###### Imports ######
+
 import requests
 import unicodedata
 from bs4 import BeautifulSoup
@@ -8,6 +10,7 @@ from typing import Dict, List, Optional, Union, cast
 import requests
 import time
 import re
+from sklearn.model_selection import train_test_split
 
 from env import github_token, github_username
 
@@ -169,3 +172,18 @@ def wrangle():
     df = prep_df(df)
     
     return df
+
+
+def train_test_split(df, random_state=123)
+    """
+    Function takes in a dataframe and returns:
+        - train df = 64% of original df
+        - validate df = 16% of original df
+        - test df = 20% of original df
+    """
+    #split the test data
+    trainvalidate, test = train_test_split(df,stratify=df.is_TypeScript, test_size=.2, random_state=123)
+    # split the validate and train data
+    train, validate = train_test_split(trainvalidate,stratify=trainvalidate.is_TypeScript, test_size=.2, random_state=123)
+    
+    return train, validate, test
