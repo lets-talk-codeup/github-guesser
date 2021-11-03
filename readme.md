@@ -39,6 +39,7 @@ The goal of this project was to build a model that can predict the primary progr
 3. A video created by our team talking through our slides
 
 **Additional Deliverables**
+
 4. Python modules that automate the data pipeline process. These modules will be imported and used in the final notebook.
 5. This README that describes what the project is and pipeline process as well as steps on how to recreate our results.
 6. A Trello board that details the process of creating this project.
